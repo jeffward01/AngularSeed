@@ -1,0 +1,17 @@
+.sp-center {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.sp-center-soft {
+    margin: 0 auto;
+}
+
+.cp-tab-container {
+    max-width: 85%;
+    text-align: center;
+}
+
+.main-container {
+    margin-top: 50px;
+}

@@ -1,0 +1,87 @@
+<div class="container nb-mainContainer" id="top">
+    <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="panel-title">Create Account</div>
+            </div>
+            <div style="padding-top:30px" class="panel-body">
+                <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+                <div id="loginform" class="form-horizontal col-md-12 col-lg-12 col-sm-12" role="form">
+
+                    <label for="login-emailaddress">Email<span style="color: red; font-weight: lighter">&nbsp;(required)</span></label>
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-at"></i></span>
+                        <input id="login-emailaddress" type="text" class="form-control" name="emailAddress" value="" ng-model="newAccount.emailAddress" placeholder="myEmail@example.com">
+                    </div>
+                    <label for="login-password">Password<span style="color: red; font-weight: lighter">&nbsp;(required)</span></label>
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input id="login-password" type="password" class="form-control" name="password" ng-model="newAccount.password" placeholder="password">
+                    </div>
+                    <label for="login-password-verify">Password Verify<span style="color: red; font-weight: lighter">&nbsp;(required)</span></label>
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input id="login-password-verify" type="password" class="form-control" name="password" ng-model="newAccount.confirmPassword" placeholder="password">
+                    </div>
+
+                    <hr />
+                    <div style="margin-top:10px" class="form-group">
+
+                        <!-- Button -->
+                        <div class="col-sm-12 sp-center">
+                            <a id="btn-login" class="btn btn-primary" ng-disabled="newAccount.password.length === 0 && newAccount.confirmPassword.length === 0" ng-click="createAccount()">Create Account</a>
+                            <a class="btn btn-danger" ng-click="goToLogin()">Cancel</a>
+                        </div>
+                    </div>
+                    <!--                   <label for="login-emailaddress" style="margin-top: 15px">Age</label>
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-at"></i></span>
+                        <input id="login-emailaddress" type="text" class="form-control" name="emailAddress" value="" ng-model="newAccount.emailAddress" placeholder="myEmail@example.com">
+                    </div>
+                    <label for="login-password">Gender</label>
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input id="login-password" type="password" class="form-control" name="password" ng-model="newAccount.password" placeholder="password">
+                    </div>
+                    <label for="login-password">Geographical Location</label>
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input id="login-password" type="password" class="form-control" name="password" ng-model="newAccount.password" placeholder="password">
+                    </div>
+                    <label for="login-password">Ethnicity</label>
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input id="login-password" type="password" class="form-control" name="password" ng-model="newAccount.password" placeholder="password">
+                    </div>
+                    <hr />
+                    <div style="margin-top:10px" class="form-group">
+                        $1$ Button #1#
+                        <div class="col-sm-12 sp-center">
+                            <a id="btn-login" class="btn btn-primary" ng-click="createAccount(newAccount)">Create Account</a>
+                            <a id="btn-login" class="btn btn-danger" ng-click="createAccount(newAccount)">Cancel</a>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="confirmEmail" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Confirm Email Address</h4>
+            </div>
+            <div class="modal-body sp-center" ng-if="passphrase != ''">
+                <p>A verification email has been sent to you at: {{newAccount.emailAddress}}.  Please verify your email by clicking on the URL provided.
+            </div>
+            <div class="modal-footer sp-center" style="text-align: center">
+                <button type="button" class="btn btn-success sp-center" ng-click="completeRegistration()">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>

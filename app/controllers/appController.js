@@ -4,7 +4,9 @@ angular.module("app").controller('appController', [
 
     //Control Obj
     $scope.appName = AppConfig.disaplayName;
-    $scope.isAuth = mockAuthService.checkAuth();
+    $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
+      $scope.isAuth = mockAuthService.checkAuth();
+    });
 
     //Nav Buttons
     $scope.goHome = function () {
@@ -36,10 +38,18 @@ angular.module("app").controller('appController', [
       $state.go('app.register', {});
     }
 
-    console.log($state.current.name);
-    if ($state.current.name === "app.login" && !$scope.isAuth) {
-    } else if ($state.current.name === "app.register") {
+
+    $scope.logout = function () {
+      alert("clicked");
+      stateManager.logout();
+
     }
+
+
+    //console.log($state.current.name);
+    //if ($state.current.name === "app.login" && !$scope.isAuth) {
+    //} else if ($state.current.name === "app.register") {
+    //}
 
     ////Control Buttons
     //$rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {

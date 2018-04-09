@@ -28,7 +28,6 @@ angular.module("app").factory('mockAuthService', [
 
     function logOut() {
       localStorageService.remove(appLoginInformation);
-      localStorageService.remove('encrypgenUserId');
     }
 
     mockAuthServiceFactory.checkAuth = _checkAuth;

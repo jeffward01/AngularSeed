@@ -39,16 +39,30 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         displayName: 'Forgot Password'
       }
     })
-
-    .state('app.home', {
-      url: '/home',
+    .state('app.sidebar', {
+      templateUrl: 'app/views/Sidebar/sidebar.html',
+      controller: 'sidebarController',
+      data: {
+      }
+    })
+    .state('app.sidebar.dashboard', {
+      url: '/dashboard',
       templateUrl: 'app/views/home.html',
       controller: 'homeController',
       data: {
         displayName: 'Home'
       }
     })
-    .state('app.about', {
+
+    .state('app.sidebar.account', {
+      url: '/account',
+      templateUrl: 'app/views/account.html',
+      controller: 'accountController',
+      data: {
+        displayName: 'Account Controller'
+      }
+    })
+    .state('app.sidebar.about', {
       url: '/about',
       templateUrl: 'app/views/about.html',
       controller: 'aboutController',

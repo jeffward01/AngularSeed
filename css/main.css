@@ -7,6 +7,10 @@
     margin: 0 auto;
 }
 
+.top-navbar{
+    z-index:2;
+}
+
 .cp-tab-container {
     max-width: 85%;
     text-align: center;
@@ -51,6 +55,18 @@ footer {
 }
 
 
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
 
 
 
@@ -72,7 +88,7 @@ footer {
     background: #222;
     position: fixed;
     height: 100%;
-    z-index: 10000;
+    z-index: 1;
     transition: all .4s ease 0s;
 }
 

@@ -1,6 +1,6 @@
 angular.module("app").controller('loginController', [
-  '$scope', '$state','mockAuthService',
-  function ($scope, $state, mockAuthService) {
+  '$scope', '$state','mockAuthService','stateManager',
+  function ($scope, $state, mockAuthService, stateManager) {
 
     //Control Objects
     $scope.loginData = {}; 
@@ -17,12 +17,9 @@ angular.module("app").controller('loginController', [
 
     $scope.login = function (loginData) {
       mockAuthService.mockLogin();
-      $state.go('app.home', {});
+      stateManager.goHome();
     }
 
-    $scope.goHome = function () {
-      $state.go('app.home', {});
-    }
 
 
 

@@ -7,13 +7,24 @@ angular.module("app").factory('stateManager', [
       var result = mockAuthService.checkAuth();
       alert(result);
       if (result === true) {
-        $state.go('app.home');
+        $state.go('app.sidebar.dashboard');
       } else {
         $state.go('app.login');
       }
     }
 
+    var _logout = function () {
+      mockAuthService.mockLogout();
+      $state.go('app.login');
+    }
+
+    var _goToAccount = function () {
+      $state.go('app.sidebar.account');
+    }
+
+    stateManagerFactory.logout = _logout;
     stateManagerFactory.goHome = _goHome;
+    stateManagerFactory.goToAccount = _goToAccount;
 
     return stateManagerFactory;
   }]);

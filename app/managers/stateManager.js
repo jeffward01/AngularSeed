@@ -5,7 +5,6 @@ angular.module("app").factory('stateManager', [
 
     var _goHome = function () {
       var result = mockAuthService.checkAuth();
-      alert(result);
       if (result === true) {
         $state.go('app.sidebar.dashboard');
       } else {

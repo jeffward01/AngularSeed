@@ -10,7 +10,6 @@ angular.module("app").controller('appController', [
 
     //Nav Buttons
     $scope.goHome = function () {
-      alert("clikced!");
       stateManager.goHome();
     }
 
@@ -40,7 +39,6 @@ angular.module("app").controller('appController', [
 
 
     $scope.logout = function () {
-      alert("clicked");
       stateManager.logout();
 
     }

@@ -1,17 +1,20 @@
 angular.module("app").controller('appController', [
-  '$scope', '$state', '$rootScope'
-, function ($scope, $state, $rootScope) {
+  '$scope', '$state', '$rootScope', 'mockAuthService', 'AppConfig','stateManager',
+  function ($scope, $state, $rootScope, mockAuthService, AppConfig, stateManager) {
 
+    //Control Obj
+    $scope.appName = AppConfig.disaplayName;
+    $scope.isAuth = mockAuthService.checkAuth();
 
     //Nav Buttons
     $scope.goHome = function () {
-      $state.go('app.home', {});
+      alert("clikced!");
+      stateManager.goHome();
     }
 
     $scope.goToAbout = function () {
       $state.go('app.about', {});
     }
-
 
     $scope.goToView2 = function () {
       $state.go('app.about', {});
@@ -33,58 +36,18 @@ angular.module("app").controller('appController', [
       $state.go('app.register', {});
     }
 
+    console.log($state.current.name);
+    if ($state.current.name === "app.login" && !$scope.isAuth) {
+    } else if ($state.current.name === "app.register") {
+    }
 
+    ////Control Buttons
+    //$rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
+    // // $state.current = toState;   // if you need the target Url
+    //  $state.current = fromState;// If you need the current URL
 
-    //Control Buttons
-    $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
+    //  //If Login
+    //  console.log($state.current);
 
-      $state.current = toState;   // if you need the target Url
-      $state.current = fromState;// If you need the current URL
-      var json = (function () {
-        event.preventDefault();
-        $.ajax({
-          'async': false,
-          'global': false,
-          'url': 'users/testLogin',
-          //'data': 'action=showOrders', 
-          'dataType': "json",
-          'success': function (data) {
-            if (data.success) {
-              $rootScope.authenticated = true;
-              $rootScope.id = data.data.id;
-              $rootScope.unique_id = data.data.unique_id;
-              $rootScope.print_house_id = data.data.print_house_id;
-              $rootScope.name = data.data.name;
-              $rootScope.email = data.data.email;
-              $rootScope.type = data.data.type;
-            } else {
-              console.log($state.current.name);//It should show value now
-
-            }
-          }
-        });
-      })
-    })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    //})
   }]);

@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#" ng-click="goHome()">Seed Project</a>
+                <a class="navbar-brand" href="#" ng-click="goHome()"><span ng-bind="appName"></span></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -37,16 +37,16 @@
                   <button type="submit" class="btn btn-default">Submit</button>
                 </form> -->
                 <ul class="nav navbar-nav pull-left">
-                    <li><a ng-click="goToAbout()"><i class="fa fa-commenting-o" aria-hidden="true"></i>&nbsp;About</a></li>
-                    <li><a ng-click="goToView2()"><i class="fa fa-rss " aria-hidden="true"></i>&nbsp;View 2</a></li>
-                    <li><a ng-click="goToView3()"><i class="fa fa-group" aria-hidden="true"></i>&nbsp;View 3</a></li>
+                    <li><a ng-click="goToAbout()"  ng-show="isAuth"><i class="fa fa-commenting-o" aria-hidden="true"></i>&nbsp;About</a></li>
+                    <li><a ng-click="goToView2()"  ng-show="isAuth"><i class="fa fa-rss " aria-hidden="true"></i>&nbsp;View 2</a></li>
+                    <li><a ng-click="goToView3()"  ng-show="isAuth"><i class="fa fa-group" aria-hidden="true"></i>&nbsp;View 3</a></li>
                 </ul>
                 <ul class="nav navbar-nav pull-right">
-                    <li><a ng-click="OptionItem()"><i class="fa fa-pill" aria-hidden="true"></i>&nbsp;OptionItem</a></li>
-                    <li><a ng-click="goToLogin()" ng-hide="isAuth"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;Login</a></li>
-                    <li><a ng-click="goToCreateAccount()" ng-hide="isAuth"><i class="fa fa-user-plus" aria-hidden="true"></i>&nbsp;Create Account</a></li>
-                    <!--      <li><a ng-click="logout()" ng-show="isAuth"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Logout</a></li>
-                    <li><a ng-click="goToProfile()" ng-show="isAuth"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;{{username}}</a></li> -->
+                    <li><a ng-click="OptionItem()" ng-show="isAuth"><i class="fa fa-pill" aria-hidden="true"></i>&nbsp;OptionItem</a></li>
+                    <!--<li><a ng-click="goToLogin()" ng-hide="isAuth"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;Login</a></li>-->
+                    <!--<li><a ng-click="goToCreateAccount()" ng-hide="isAuth"><i class="fa fa-user-plus" aria-hidden="true"></i>&nbsp;Create Account</a></li>-->
+                        <li><a ng-click="logout()" ng-show="isAuth"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Logout</a></li>
+                    <li><a ng-click="goToProfile()" ng-show="isAuth"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;{{username}}</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

@@ -1,8 +1,8 @@
 angular.module("app").controller('homeController', [
-    '$scope', '$state',
-    function ($scope, $state) {
+    '$scope', '$state', 'stateManager',
+    function ($scope, $state, stateManager) {
 
-
+     
 
 
 

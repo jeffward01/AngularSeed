@@ -2,7 +2,8 @@ var app = angular.module('app', ['ui.router', 'LocalStorageModule', 'angular-loa
 
 //States
 app.config(function ($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise('/app/home');
+
+  $urlRouterProvider.otherwise('/app/login');
 
   //States
   $stateProvider.state('app', {

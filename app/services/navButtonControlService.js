@@ -1,5 +1,5 @@
 angular.module("app").service('navButtonControlService', [
-  '$scope', '$state',
+ '$state',
   function ($state) {
 
 

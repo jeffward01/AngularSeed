@@ -1,5 +1,5 @@
 angular.module("app").service('alertService', [
-  '$scope', '$state',
+ '$state',
   function ($state) {
 
 

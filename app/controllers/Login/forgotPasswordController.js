@@ -1,6 +1,6 @@
 angular.module("app").controller('forgotPasswordController', [
-  '$scope', '$state',
-  function ($scope, $state) {
+  '$scope', '$state','alertService',
+  function ($scope, $state, alertService) {
 
 
     $scope.newAccount = {};
@@ -10,6 +10,10 @@ angular.module("app").controller('forgotPasswordController', [
       $state.go('app.about', {});
     }
 
+
+    $scope.sendForgotPasswordEmail = function () {
+      alertService.success("Email has been sent!","Success!")
+    }
 
     $scope.goHome = function () {
       $state.go('app.home', {});

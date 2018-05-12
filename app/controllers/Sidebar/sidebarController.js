@@ -9,6 +9,32 @@ angular.module("app").controller('sidebarController', [
       stateManager.goToAccount();
     }
 
+ 
+    $scope.goToLogin = function () {
+      stateManager.goToLogin();
+    }
+
+
+    $scope.goToAbout = function () {
+      stateManager.goToAbout();
+    }
+
+
+    $scope.goToSettings = function () {
+      stateManager.goToSettings();
+    }
+
+
+
+    $scope.goHome = function () {
+      stateManager.goHome();
+    }
+
+
+    $scope.goToDashboard = function () {
+      stateManager.goToDashboard();
+    }
+
 
 
 

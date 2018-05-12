@@ -6,70 +6,84 @@ app.config(function ($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/app/login');
 
   //States
-  $stateProvider.state('app', {
-    url: '/app',
-    templateUrl: 'app/views/app.html',
-    controller: 'appController',
-    data: {
-      displayName: 'App'
-    }
-  })
-
-    .state('app.login', {
-      url: '/login',
-      templateUrl: 'app/views/Login/login.html',
-      controller: 'loginController',
-      data: {
-        displayName: 'Login'
-      }
-    })
-    .state('app.register', {
-      url: '/register',
-      templateUrl: 'app/views/Login/register.html',
-      controller: 'registerController',
-      data: {
-        displayName: 'Register'
-      }
-    })
-    .state('app.forgotPassword', {
-      url: '/forgotPassword',
-      templateUrl: 'app/views/Login/forgotPassword.html',
-      controller: 'forgotPasswordController',
-      data: {
-        displayName: 'Forgot Password'
-      }
-    })
-    .state('app.sidebar', {
-      templateUrl: 'app/views/Sidebar/sidebar.html',
-      controller: 'sidebarController',
-      data: {
-      }
-    })
-    .state('app.sidebar.dashboard', {
-      url: '/dashboard',
-      templateUrl: 'app/views/home.html',
-      controller: 'homeController',
-      data: {
-        displayName: 'Home'
-      }
-    })
-
-    .state('app.sidebar.account', {
-      url: '/account',
-      templateUrl: 'app/views/account.html',
-      controller: 'accountController',
-      data: {
-        displayName: 'Account Controller'
-      }
-    })
+  $stateProvider.state('app',
+      {
+        url: '/app',
+        templateUrl: 'app/views/app.html',
+        controller: 'appController',
+        data: {
+          displayName: 'App'
+        }
+      })
+    .state('app.login',
+      {
+        url: '/login',
+        templateUrl: 'app/views/Login/login.html',
+        controller: 'loginController',
+        data: {
+          displayName: 'Login'
+        }
+      })
+    .state('app.register',
+      {
+        url: '/register',
+        templateUrl: 'app/views/Login/register.html',
+        controller: 'registerController',
+        data: {
+          displayName: 'Register'
+        }
+      })
+    .state('app.forgotPassword',
+      {
+        url: '/forgotPassword',
+        templateUrl: 'app/views/Login/forgotPassword.html',
+        controller: 'forgotPasswordController',
+        data: {
+          displayName: 'Forgot Password'
+        }
+      })
+    .state('app.sidebar',
+      {
+        templateUrl: 'app/views/Sidebar/sidebar.html',
+        controller: 'sidebarController',
+        data: {
+        }
+      })
+    .state('app.sidebar.dashboard',
+      {
+        url: '/dashboard',
+        templateUrl: 'app/views/dashboard.html',
+        controller: 'dashboardController',
+        data: {
+          displayName: 'Home'
+        }
+      })
+    .state('app.sidebar.account',
+      {
+        url: '/account',
+        templateUrl: 'app/views/account.html',
+        controller: 'accountController',
+        data: {
+          displayName: 'Account Controller'
+        }
+      })
     .state('app.sidebar.about', {
-      url: '/about',
-      templateUrl: 'app/views/about.html',
-      controller: 'aboutController',
-      data: {
-        displayName: 'About'
-      }
-    });
+        url: '/about',
+        templateUrl: 'app/views/about.html',
+        controller: 'aboutController',
+        data: {
+          displayName: 'About'
+        }
+      })
+      .state('app.sidebar.settings',
+          {
+            url: '/settings',
+            templateUrl: 'app/views/settings.html',
+            controller: 'settingsController',
+            data: {
+              displayName: 'About'
+            }
+          });
 
   //Custom Filters
   app.filter('timezone', function () {
